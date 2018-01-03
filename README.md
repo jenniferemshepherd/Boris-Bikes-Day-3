@@ -10,17 +10,18 @@ This project emulates a Boris Bike system. We have attempted to implement the sy
 
 ## Getting started
 
-git clone - path to repo
-bundle
+git clone git@github.com:Leigan0/boris_bikes.git
+bundle TBC
 
 ## Running tests
+rspec
 test command - TBC
 
 ## Copyright and licensing information
 
 ## Instructions docs / install / grab latest code & build
 
-command to start TBC
+To create a new station - station = DockingStation.new
 cd to directory TBC
 
 ## List of authors
@@ -45,4 +46,4 @@ So that I can use a good bike,
 I'd like to see if a bike is working
 
 ## Domain model
-![Alt text](domain_model.jpg)
+![Alt text](img/Domain_model.jpg)
