@@ -1,5 +1,6 @@
 class DockingStation
-  #require "./lib/bike.rb"
+  require_relative "bike"
+  
   def release_bike
     Bike.new
   end
