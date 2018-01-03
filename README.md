@@ -10,23 +10,23 @@ This project emulates a Boris Bike system. We have attempted to implement the sy
 
 ## Getting started
 
-git clone git@github.com:Leigan0/boris_bikes.git
+* git clone https://github.com/Leigan0/boris_bikes
 bundle TBC
 
 ## Running tests
-rspec
-test command - TBC
+* rspec
+* test command - TBC
 
 ## Copyright and licensing information
 
 ## Instructions docs / install / grab latest code & build
 
-To create a new station - station = DockingStation.new
-cd to directory TBC
+* cd boris_bikes
+* To create a new station - station = DockingStation.new
 
 ## List of authors
-Leigh-Ann Gant
-Ed Goold
+* Leigh-Ann Gant
+* Ed Goold
 
 ## Instructions to submit bugs / feature requests / join the user / join mailing list etc / community etc
 
