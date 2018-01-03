@@ -1,6 +1,6 @@
 # Boris Bikes
 
-## name of sub-modules
+## Name of sub-modules
 
 ## Description of project
 
@@ -24,6 +24,8 @@ command to start TBC
 cd to directory TBC
 
 ## List of authors
+Leigh-Ann Gant
+Ed Goold
 
 ## Instructions to submit bugs / feature requests / join the user / join mailing list etc / community etc
 
@@ -41,3 +43,6 @@ I'd like to get a bike from a docking station.
 As a person,
 So that I can use a good bike,
 I'd like to see if a bike is working
+
+## Domain model
+![Alt text](domain_model.jpg)
