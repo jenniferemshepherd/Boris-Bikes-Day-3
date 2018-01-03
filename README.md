@@ -46,4 +46,4 @@ So that I can use a good bike,
 I'd like to see if a bike is working
 
 ## Domain model
-![Alt text](img/Domain_model.jpg)
+![Alt text](img/domain_model.jpg)
