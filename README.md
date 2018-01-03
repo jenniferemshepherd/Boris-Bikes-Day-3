@@ -11,7 +11,7 @@ This project emulates a Boris Bike system. We have attempted to implement the sy
 ## Getting started
 
 * git clone https://github.com/Leigan0/boris_bikes
-bundle TBC
+* bundle TBC
 
 ## Running tests
 * rspec
