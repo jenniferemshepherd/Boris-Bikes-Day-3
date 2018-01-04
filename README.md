@@ -22,11 +22,15 @@ This project emulates a Boris Bike system. We have attempted to implement the sy
 ## Instructions docs / install / grab latest code & build
 
 * cd boris_bikes
-* To create a new station - station = DockingStation.new
+* To create a station - station = DockingStation.new
+* To create bike - bike = Bike.new
+* To release a bike - station.release_bike
+* To dock a bike - station.dock(bike)
 
 ## List of authors
 * Leigh-Ann Gant
 * Ed Goold
+* Jennifer Shepherd
 
 ## Instructions to submit bugs / feature requests / join the user / join mailing list etc / community etc
 
