@@ -14,14 +14,13 @@ describe DockingStation do
     expect(bike).to be_working
   end
 
-  it {is_expected.to respond_to(:dock_bike).with(1).argument}
+  it {is_expected.to respond_to(:dock).with(1).argument}
 
-  describe '#dock_bike' do
-    it 'stores a docked bike' do
-      station = DockingStation.new
-      bike = Bike.new
-      station.dock_bike(bike)
-      expect(station.bikes).to eq [bike]
-    end
-  end 
+  it 'docks bike' do
+    station = DockingStation.new
+    bike = station.release_bike
+    station.dock(bike)
+    expect(station.bikes).to eq [bike]
+  end
+
  end
