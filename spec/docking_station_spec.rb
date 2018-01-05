@@ -29,6 +29,20 @@ describe DockingStation do
       bike = station.release_bike
       expect(bike).to be_working
     end
+    it 'doesnt release broken bike' do
+      station = DockingStation.new
+      bike = Bike.new
+      station.dock(bike,false)
+      expect {station.release_bike}.to raise_error "No working bikes available"
+    end
+    it 'release a bike if one is available even if bikes[0] is broken' do
+      station = DockingStation.new
+      bike = Bike.new
+      station.dock(bike,false)
+      bike2 = Bike.new
+      station.dock(bike2)
+      expect(station.release_bike).to eq bike2
+    end
     it 'will not release a bike if none available' do
       station = DockingStation.new
       expect {station.release_bike}.to raise_error "No bikes available"
@@ -42,6 +56,14 @@ describe DockingStation do
       bike = Bike.new
       station.dock(bike)
       expect(station.bikes).to eq [bike]
+    end
+
+    it 'docks broken bike' do
+      station = DockingStation.new
+      bike = Bike.new
+#      bike.working = false
+      station.dock(bike,false)
+      expect(station.bikes[station.bikes.length-1]).not_to be_working
     end
 
     it 'will not dock a bike if station is full' do
