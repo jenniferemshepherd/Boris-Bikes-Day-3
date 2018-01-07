@@ -1,7 +1,7 @@
 require 'docking_station'
 
 describe DockingStation do
-  # let(:bike) { double :bike }
+  let(:bike) { double :bike }
 
   # it {is_expected.to respond_to(:new).with(1).argument}
 
@@ -20,7 +20,7 @@ describe DockingStation do
 
   describe '#release_bike' do
     it 'releases a bike' do
-      bike = double(:bike)
+      bike = Bike.new
       allow(bike).to receive(:working?).and_return(true)
       allow(bike).to receive("working=").and_return(true)
       allow(bike).to receive("working").and_return(true)
@@ -29,7 +29,7 @@ describe DockingStation do
     end
 
     it 'releases working bike' do
-      bike = double(:bike)
+      bike = Bike.new
       allow(bike).to receive(:working?).and_return(true)
       allow(bike).to receive("working=").and_return(true)
       allow(bike).to receive("working").and_return(true)
@@ -40,7 +40,7 @@ describe DockingStation do
 
     it 'doesnt release broken bike' do
       station = DockingStation.new
-      bike = double(:bike)
+      bike = Bike.new
       allow(bike).to receive(:working?).and_return(false)
       allow(bike).to receive("working=").and_return(false)
       allow(bike).to receive("working").and_return(false)
@@ -49,17 +49,22 @@ describe DockingStation do
     end
 
     it 'release a bike if one is available even if bikes[0] is broken' do
-      station = DockingStation.new
-      bike = double(:bike)
-      station.dock(bike,false)
-      bike2 = double(:bike)
-      station.dock(bike2)
-      expect(station.release_bike).to eq bike2
+      bike = Bike.new
+      subject.dock(bike)
+      allow(bike).to receive(:working?).and_return(false)
+      allow(bike).to receive("working=").and_return(false)
+      allow(bike).to receive("working").and_return(false)
+      subject.dock(bike,false)
+      bike2 = Bike.new
+      allow(bike2).to receive(:working?).and_return(true)
+      allow(bike2).to receive("working=").and_return(true)
+      allow(bike2).to receive("working").and_return(true)
+      subject.dock(bike2)
+      expect(subject.release_bike).to eq bike2
     end
 
     it 'will not release a bike if none available' do
-      station = DockingStation.new
-      expect {station.release_bike}.to raise_error "No bikes available"
+      expect {subject.release_bike}.to raise_error "No bikes available"
     end
 
   end
@@ -67,29 +72,40 @@ describe DockingStation do
   it {is_expected.to respond_to(:dock).with(1).argument}
   describe '#dock'do
     it 'docks bike' do
-      station = DockingStation.new
-      bike = double(:bike)
-      station.dock(bike)
-      expect(station.bikes).to eq [bike]
+      bike = Bike.new
+      allow(bike).to receive(:working?).and_return(true)
+      allow(bike).to receive("working=").and_return(true)
+      allow(bike).to receive("working").and_return(true)
+      subject.dock(bike)
+      expect(subject.bikes).to eq [bike]
     end
 
     it 'docks broken bike' do
-      station = DockingStation.new
-      bike = double(:bike)
-#      bike.working = false
-      station.dock(bike,false)
-      expect(station.bikes[station.bikes.length-1]).not_to be_working
+      bike = Bike.new
+      allow(bike).to receive(:working?).and_return(false)
+      allow(bike).to receive("working=").and_return(false)
+      allow(bike).to receive("working").and_return(false)
+      subject.dock(bike,false)
+      expect(subject.bikes[subject.bikes.length-1]).not_to be_working
     end
 
     it 'will not dock a bike if station is full' do
-      DockingStation::DEFAULT_CAPACITY.times { subject.dock double(:bike) }
-      expect {subject.dock(double(:bike))}.to raise_error "Station is full"
+      bike = Bike.new
+      DockingStation::DEFAULT_CAPACITY.times { subject.dock(bike) }
+      allow(bike).to receive(:working?).and_return(true)
+      allow(bike).to receive("working=").and_return(true)
+      allow(bike).to receive("working").and_return(true)
+      expect {subject.dock(bike)}.to raise_error "Station is full"
     end
 
     it 'will not dock a bike if station is full' do
+      bike = Bike.new
       station = DockingStation.new(25)
-      station.capacity.times { station.dock double(:bike) }
-      expect {station.dock(double(:bike))}.to raise_error "Station is full"
+      station.capacity.times { station.dock(bike) }
+      allow(bike).to receive(:working?).and_return(true)
+      allow(bike).to receive("working=").and_return(true)
+      allow(bike).to receive("working").and_return(true)
+      expect {station.dock(bike)}.to raise_error "Station is full"
     end
 
   end
