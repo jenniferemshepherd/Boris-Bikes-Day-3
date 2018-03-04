@@ -1,51 +1,29 @@
-# Boris Bikes
+Boris Bikes Challenge
+==================
 
-## Name of sub-modules
+Brief Summary of Approach
+-------
+This has been my first TDD project at Makers Academy and I paired for 3 days to work on it.  It was fun to get into the habit of feature testing, then writing RSpec tests for that behaviour.  We then wrote the most basic code to pass the test, before refactoring.
 
-## Description of project
-
-This project emulates a Boris Bike system. We have attempted to implement the system in a TDD basis using BDD principles.
-
-## How its used
-
-## Getting started
-
-* git clone https://github.com/Leigan0/boris_bikes
-* bundle TBC
-
-## Running tests
-* rspec
-* test command - TBC
-
-## Copyright and licensing information
-
-## Instructions docs / install / grab latest code & build
-
-* cd boris_bikes
+Instructions
+-------
+* Clone this repository
+* cd boris-bikes
+* Run the command 'bundle' in the project directory to ensure you have all the gems
+Functionality n IRB:
 * To create a station - station = DockingStation.new
 * To create bike - bike = Bike.new
 * To release a bike - station.release_bike
 * To dock a bike - station.dock(bike)
 
-## List of authors
-* Leigh-Ann Gant
-* Ed Goold
-* Jennifer Shepherd
-
-## Instructions to submit bugs / feature requests / join the user / join mailing list etc / community etc
-
-## Known bugs / troubleshooting
-
-## Other contact information
-
-## Legal notices
-
-## User stories
-As a person,
+User stories
+--------
+```
+As a user,
 So that I can use a bike,
 I'd like to get a bike from a docking station.
 
-As a person,
+As a user,
 So that I can use a good bike,
 I'd like to see if a bike is working
 
@@ -68,7 +46,16 @@ I'd like docking stations not to accept more bikes than their capacity.
 As a system maintainer,
 So that I can plan the distribution of bikes,
 I want a docking station to have a default capacity of 20 bikes.
-
+```
 
 ## Domain model
 ![Alt text](img/domain_model.jpg)
+
+## List of authors
+* Leigh-Ann Gant
+* Ed Goold
+* Jennifer Shepherd
+
+Technologies Used:
+--------
+* RSpec
