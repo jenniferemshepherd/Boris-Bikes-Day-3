@@ -8,8 +8,9 @@ This has been my first TDD project at Makers Academy and I paired for 3 days to 
 Instructions
 -------
 * Clone this repository
-* cd boris-bikes
+* cd Boris-Bikes-Day-3
 * Run the command 'bundle' in the project directory to ensure you have all the gems
+
 Functionality n IRB:
 * To create a station - station = DockingStation.new
 * To create bike - bike = Bike.new
