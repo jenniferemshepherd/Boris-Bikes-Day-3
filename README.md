@@ -11,7 +11,7 @@ Instructions
 * cd Boris-Bikes-Day-3
 * Run the command 'bundle' in the project directory to ensure you have all the gems
 
-Functionality n IRB:
+Functionality in IRB:
 * To create a station - station = DockingStation.new
 * To create bike - bike = Bike.new
 * To release a bike - station.release_bike
